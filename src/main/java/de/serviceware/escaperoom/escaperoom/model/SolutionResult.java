@@ -8,6 +8,6 @@ import lombok.Data;
 public class SolutionResult {
     private boolean correct;
     private String riddle;
-    private String riddleNumber;
+    private String titleRiddle;
     private String imageURL;
 }

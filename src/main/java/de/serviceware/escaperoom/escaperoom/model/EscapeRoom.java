@@ -7,4 +7,5 @@ import lombok.Data;
 @AllArgsConstructor
 public class EscapeRoom {
     private String initialRiddle;
+    private String titleRiddle;
 }
