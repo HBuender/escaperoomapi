@@ -1,5 +1,0 @@
-2021-02-24 19:51:24.114  INFO 4580 --- [main] d.s.e.e.EscaperoomApplicationTests       : Starting EscaperoomApplicationTests using Java 15.0.1 on LAP-HEBU2 with PID 4580 (started by hendrik.buender in C:\Users\hendrik.buender\git\escaperoomapi)
-2021-02-24 19:51:24.119  INFO 4580 --- [main] d.s.e.e.EscaperoomApplicationTests       : No active profile set, falling back to default profiles: default
-2021-02-24 19:51:25.337  INFO 4580 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-02-24 19:51:25.700  INFO 4580 --- [main] d.s.e.e.EscaperoomApplicationTests       : Started EscaperoomApplicationTests in 1.914 seconds (JVM running for 2.858)
-2021-02-24 19:51:26.123  INFO 4580 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
