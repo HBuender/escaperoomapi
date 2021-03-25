@@ -1,3 +1,3 @@
 call mvn clean install
-call docker build -t hbuender/kvescaperoomroom:latest .
-call docker push hbuender/kvescaperoomroom:latest
+call docker build -t hbuender/escaperoom:latest .
+call docker push hbuender/escaperoom:latest
