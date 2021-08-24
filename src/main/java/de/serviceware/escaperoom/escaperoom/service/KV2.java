@@ -24,8 +24,18 @@ public class KV2 extends RiddleServiceBase{
     private String riddleFive="Euch begegnen diese fünf Spieler des lokalen Fußballvereins und ihr wisst sofort mit welchem Transportmittel es weitergeht.\n";
 
     private String riddleSix="Wie ihr euch sicherlich schon denkt ist die nächste Station unserer Reise Prag. Aber um den Zug besteigen zu dürfen müsste ihr zunächst die richtige Zahlenkombination finden. Dabei hilft euch neben dem Wissen über das Ziel natürlich auch euer Wissen über den KV.\n" +
-            "Wenn ihr die vier Zahlen hier im richtigen Format einsetzt (11.2222, 33.4444) erhaltet ihr den Zielort\n";
-    private String finalText="Ihr habt das Ziel unserer Reise gefunden. Schickt eine Whatsapp Nachricht mit dem Namen der Bar and Thilo oder Hendrik, um euch den Sieg zu sichern.";
+            "Wenn ihr die vier Zahlen hier im richtigen Format einsetzt (11.2233, 44.5555) erhaltet ihr den Zielort\n";
+    private String finalText="Angekommen am Hauptbahnhof in Prag gebt ihr die Koordinaten sofort in euer Handy ein und spurtet los. " +
+            "<br>Über den belebten Altstädter Ring erreicht ihr eine zwielichtige Gasse, wo euch die Neonreklame einer wohl bekannten Bar begrüßt. " +
+            "<br>Doch drinnen bietet sich euch ein Bild des Grauens. " +
+            "<br>Ihr erblickt die Geflüchteten an einem Tisch, auf dem diverse leere Gin-Gläser stehen. " +
+            "<br>Hendrik gönnt sich gerade ein kleines Nickerchen und auch der Gott-König und Präsident ist mit sabberndem Mund am Tisch eingeschlafen. " +
+            "<br>Eine leere Geldbörse liegt vor ihm und in der Hand hält er eine heiße MILF mit Honig. " +
+            "<br>Als ihr die beiden gerade wecken wollt, springt plötzlich ein Angestellter der Prager Verkehrsbetriebe aus dem Schatten hervor und blockiert euren Weg. " +
+            "<br>“Das macht dann 80.000 Kronen wegen Schwarzfahrens quer durch Europa”, ruft er und bricht in diabolisches Gelächter aus.  \n" +
+            "<br>Schweißgebadet wacht ihr auf. \n" +
+            "<br><b>Herzlichen Glückwunsch</b>!\n" +
+            "<br>Ihr habt das Ziel unserer Reise gefunden. Schickt eine Whatsapp Nachricht mit dem Namen der Bar and Thilo oder Hendrik, um euch den Sieg zu sichern.\n";
 
 
 
@@ -49,7 +59,7 @@ public class KV2 extends RiddleServiceBase{
     @Override
     public EscapeRoom initEscapeRoom() {
         Riddle riddle = new Riddle(this.riddleOne, "Rätsel 1", null);
-        ImageContent image = new ImageContent("kv/KVEscapeRoom.png",null,null);
+        ImageContent image = new ImageContent("kv2/KV-Scotland-Yard.jpg",null,null);
         return new EscapeRoom(riddle,image,getHints(),getStaticTextContent());
     }
 
@@ -80,7 +90,7 @@ public class KV2 extends RiddleServiceBase{
         if("BARCA".equals(proposal.getProposal())){
             return getCorrectResult(riddleFive,"Rätsel 5",new ImageContent("kv2/Full.png",null,null));
         }
-        if("Train".equals(proposal.getProposal())){
+        if("train".equals(proposal.getProposal())){
             return getCorrectResult(riddleSix,"Rätsel 6",null);
         }
         if("50.0897, 14.4221".equals(proposal.getProposal())){

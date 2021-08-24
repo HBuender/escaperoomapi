@@ -1,11 +1,15 @@
 package de.serviceware.escaperoom.escaperoom;
 
+import de.serviceware.escaperoom.escaperoom.model.SolutionProposal;
+import de.serviceware.escaperoom.escaperoom.model.SolutionProposalResult;
+import de.serviceware.escaperoom.escaperoom.service.KVRiddle;
+import de.serviceware.escaperoom.escaperoom.service.RiddleService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 @SpringBootTest
@@ -17,17 +21,5 @@ class EscaperoomApplicationTests {
     void contextLoads() {
     }
 
-    @Test
-    void testInit(){
-        assertNotNull(escaperoomController.initEscapeRoom());
-    }
-    @Test
-    void testInitInitialRiddle(){
-        assertNotNull(escaperoomController.initEscapeRoom().getInitialRiddle());
-    }
-    @Test
-    void testInitInitialRiddleTitle(){
-        assertNotNull(escaperoomController.initEscapeRoom().getInitialRiddle());
-    }
 
 }

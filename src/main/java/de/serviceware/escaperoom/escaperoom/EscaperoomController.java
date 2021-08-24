@@ -1,7 +1,6 @@
 package de.serviceware.escaperoom.escaperoom;
 
 import de.serviceware.escaperoom.escaperoom.model.EscapeRoom;
-import de.serviceware.escaperoom.escaperoom.model.Riddle;
 import de.serviceware.escaperoom.escaperoom.model.SolutionProposal;
 import de.serviceware.escaperoom.escaperoom.model.SolutionProposalResult;
 import de.serviceware.escaperoom.escaperoom.service.RiddleService;
@@ -22,7 +21,6 @@ public class EscaperoomController {
     SolutionProposalResult getNextRiddlePost(@RequestBody SolutionProposal proposal, @RequestHeader HttpHeaders headers) {
         System.out.println(headers);
         System.out.println(headers.getHost()+": "+proposal.getProposal());
-        String result= "";
         return riddleService.validateSolutionProposal(proposal);
     }
 
