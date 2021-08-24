@@ -7,5 +7,4 @@ import lombok.Data;
 @AllArgsConstructor
 public class SolutionProposal {
     private String proposal;
-    private String retVal;
 }

@@ -142,17 +142,7 @@ public class KVRiddleTest {
 
     @Test
     void testKVRiddle_Wrong_Title(){
-        assertEquals("Geschafft!!", getFinalRiddle().getTitleRiddle());
-    }
-
-    @Test
-    void testKVRiddle_Wrong_Text(){
-        assertEquals(KVRiddle.finalText, getFinalRiddle().getRiddle());
-    }
-
-    @Test
-    void testKVRiddle_Wrong_Image(){
-        assertNull(getFinalRiddle().getImageContent());
+        assertNull(getIncorrectResult());
     }
 
 
@@ -184,6 +174,6 @@ public class KVRiddleTest {
     }
 
     SolutionProposalResult getRiddleForSolution(String solution){
-        return service.validateSolutionProposal(new SolutionProposal(solution,""));
+        return service.validateSolutionProposal(new SolutionProposal(solution));
     }
 }
