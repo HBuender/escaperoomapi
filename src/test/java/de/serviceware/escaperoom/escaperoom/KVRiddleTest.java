@@ -32,6 +32,22 @@ public class KVRiddleTest {
         assertNotNull(escaperoomController.initEscapeRoom());
     }
     @Test
+    void testInitHints(){
+        assertNotNull(escaperoomController.initEscapeRoom().getHints());
+    }
+
+    @Test
+    void testInitStaticTextContent(){
+        assertNotNull(escaperoomController.initEscapeRoom().getStaticTextContent());
+    }
+
+    @Test
+    void testInitPicture(){
+        assertNotNull(escaperoomController.initEscapeRoom().getPicture());
+    }
+
+
+    @Test
     void testInitInitialRiddle(){
         assertNotNull(escaperoomController.initEscapeRoom().getInitialRiddle());
     }
@@ -44,6 +60,8 @@ public class KVRiddleTest {
     void testInitInitialRiddle_Image(){
         assertNull(escaperoomController.initEscapeRoom().getInitialRiddle().getImageContent());
     }
+
+
 
     @Test
     void testInitInitialRiddle_Text(){
