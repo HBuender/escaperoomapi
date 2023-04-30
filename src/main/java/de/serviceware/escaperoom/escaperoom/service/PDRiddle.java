@@ -75,7 +75,7 @@ public class PDRiddle extends RiddleServiceBase{
             return getCorrectResult(riddleFive,"Riddle 5",null);
         }
         if("4{123}".equals(proposal.getProposal())){
-            return getCorrectResult(solUnderstood+riddleFive,"Riddle 5",null);
+            return getCorrectResult(solUnderstood+riddleFour,"Riddle 5",null);
         }
         return getIncorrectResult();
     }

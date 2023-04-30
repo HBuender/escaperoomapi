@@ -20,15 +20,21 @@ public class PDRiddleTest {
     @Autowired PDRiddle service;
     // test Riddle
     private String solutionRiddleOne="9886";
-    private String solutionRiddleTwo="13301725";
-    private String solutionRiddleThree="1224";
-    private String solutionRiddleFour="210,5";
-    private String solutionRiddleFive="131221";
+    private String solutionRiddleTwoForceHint="2:123";
+
+    private String solutionRiddleTwo="2:332";
+    private String solutionRiddleThree="SJJ";
+    private String solutionRiddleFour="4{871}";
+
+    private String solutionRiddleFour_ForceHint="4{123}";
     private String solutionRiddleSix="1986";
     private String wrong="wrong";
 
     private String riddleOne = "Let’s start the game with the history geek challenge. Be fast in finding out the correct answers and sum them up to a four-digit code.";
     private String riddleTwo="Great! Now Find the numbers!\n\nFind five numbers on the 'Where’s Waldo' style picture above.\n\n Enter the solution in format: '2:___' replacing the '_' with the correct number, e.g. 2:123";
+    private String solUnderstood="Great you understood how to exchange the '_' for digits, now go and solve the riddle ;)\n\n\n";
+
+    private String riddleTwoHint="Great! Now Find the numbers!\n\nFind five numbers on the 'Where’s Waldo' style picture above.\n\n Enter the solution in format: '2:___' replacing the '_' with the correct number, e.g. 2:123";
     private String riddleThree="Well done!\nNow find out what these codes stand for, find their common competitor and enter his three-digit code as the solution of this riddle.\n";
     private String riddleFour="Fantastic!\n\nNow let’s do some real visual down-to-earth-puzzling.\n\n Enter the solution in format: '4{___}' replacing the '_' with the correct number, e.g. 4{123})";
     private String riddleFive="“You rock! You’ve almost done it. Now tackle the very simple last riddle:\n\n" +
@@ -40,7 +46,7 @@ public class PDRiddleTest {
             "\n\n" +
             "You are now finished with the riddles, we hope you had some fun! If there is time left until the official end of this years kick-off, you can just keep on chatting with your team mates or join one of the discussion sessions on either product or technology strategy.\n" +
             "\n";
-    private String solUnderstood="Great you understood how to exchange the '_' for digits, now go and solve the riddle ;)\n\n\n";
+
     private String escapeRoomTitle = "Welcome to the PD Escape Room";
     private String escapeRoomDescription = "“Welcome to our virtual Escape Room Game, the one and only “Escape the MS Teams Room” challenge!\n" +
             "<br>Your task as a team for the next <b>60 minutes</b> is to solve four riddles.\n" +
@@ -98,10 +104,53 @@ public class PDRiddleTest {
     }
     //test initEscapeRoom().getInitialRiddle().getSolutionProposal()
     @Test
-    void testInitInitialRiddle_SolutionProposal(){
-        assertNotNull(service.validateSolutionProposal(new SolutionProposal(solutionRiddleOne)));
-        SolutionProposalResult validateSolutionProposal = service.validateSolutionProposal(new SolutionProposal(solutionRiddleOne));
-        assertTrue(validateSolutionProposal.isCorrect());
+    void testRiddleOne_SolutionProposal_IsCorrect(){
+        assertTrue(validateSolutionProposal(solutionRiddleOne).isCorrect());
     }
+    @Test
+    void testRiddleOne_SolutionProposal_NewRiddle(){
+        assertEquals(validateSolutionProposal(solutionRiddleOne).getRiddle().getRiddle(),riddleTwo);
+    }
+    @Test
+    void testRiddleTwo_SolutionProposal_IsCorrect(){
+        assertTrue(validateSolutionProposal(solutionRiddleTwo).isCorrect());
+    }
+    @Test
+    void testRiddleTwo_SolutionProposal_Hint(){
+        assertEquals(validateSolutionProposal(solutionRiddleTwoForceHint).getRiddle().getRiddle(),solUnderstood+riddleTwoHint);
+    }
+
+    @Test
+    void testRiddleTwo_SolutionProposal(){
+        assertEquals(validateSolutionProposal(solutionRiddleTwo).getRiddle().getRiddle(),riddleThree);
+    }
+
+    @Test
+    void testRiddleThree_SolutionProposal_IsCorrect(){
+        assertTrue(validateSolutionProposal(solutionRiddleThree).isCorrect());
+    }
+
+    @Test
+    void testRiddleThree_SolutionProposal(){
+        assertEquals(validateSolutionProposal(solutionRiddleThree).getRiddle().getRiddle(),riddleFour);
+    }
+    @Test
+    void testRiddleFour_SolutionProposal_IsCorrect(){
+        assertTrue(validateSolutionProposal(solutionRiddleFour).isCorrect());
+    }
+    @Test
+    void testRiddleFour_SolutionProposal_Hint(){
+        assertEquals(solUnderstood+riddleFour,validateSolutionProposal(solutionRiddleFour_ForceHint).getRiddle().getRiddle());
+            }
+
+    @Test
+    void testRiddleFour_SolutionProposal(){
+        assertEquals(validateSolutionProposal(solutionRiddleFour).getRiddle().getRiddle(),riddleFive);
+    }
+
+    public SolutionProposalResult validateSolutionProposal(String solution) {
+        return service.validateSolutionProposal(new SolutionProposal(solution));
+    }
+
 
 }
