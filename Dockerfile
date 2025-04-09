@@ -1,4 +1,4 @@
-FROM openjdk:22-slim
+FROM openjdk:25-slim
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
