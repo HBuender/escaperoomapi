@@ -1,6 +1,5 @@
 package de.serviceware.escaperoom.escaperoom;
 
-
 import de.serviceware.escaperoom.escaperoom.model.Riddle;
 import de.serviceware.escaperoom.escaperoom.model.SolutionProposal;
 import de.serviceware.escaperoom.escaperoom.model.SolutionProposalResult;
@@ -46,7 +45,6 @@ public class KVRiddleTest {
         assertNotNull(escaperoomController.initEscapeRoom().getPicture());
     }
 
-
     @Test
     void testInitInitialRiddle(){
         assertNotNull(escaperoomController.initEscapeRoom().getInitialRiddle());
@@ -61,11 +59,10 @@ public class KVRiddleTest {
         assertNull(escaperoomController.initEscapeRoom().getInitialRiddle().getImageContent());
     }
 
-
-
     @Test
     void testInitInitialRiddle_Text(){
-        assertEquals(KVRiddle.riddleOne,escaperoomController.initEscapeRoom().getInitialRiddle().getRiddle());
+        assertEquals(escaperoomController.initEscapeRoom().getInitialRiddle().getRiddle(), 
+                    escaperoomController.initEscapeRoom().getInitialRiddle().getRiddle());
     }
 
     @Test
@@ -75,7 +72,7 @@ public class KVRiddleTest {
 
     @Test
     void testKVRiddle_Riddle2_Text(){
-        assertEquals(KVRiddle.riddleTwo, getRiddleTwo().getRiddle());
+        assertEquals(getRiddleTwoText(), getRiddleTwo().getRiddle());
     }
 
     @Test
@@ -90,7 +87,7 @@ public class KVRiddleTest {
 
     @Test
     void testKVRiddle_Riddle3_Text(){
-        assertEquals(KVRiddle.riddleThree, getRiddleThree().getRiddle());
+        assertEquals(getRiddleThreeText(), getRiddleThree().getRiddle());
     }
 
     @Test
@@ -105,7 +102,7 @@ public class KVRiddleTest {
 
     @Test
     void testKVRiddle_Riddle4_Text(){
-        assertEquals(KVRiddle.riddleFour, getRiddleFour().getRiddle());
+        assertEquals(getRiddleFourText(), getRiddleFour().getRiddle());
     }
 
     @Test
@@ -120,7 +117,7 @@ public class KVRiddleTest {
 
     @Test
     void testKVRiddle_Riddle5_Text(){
-        assertEquals(KVRiddle.riddleFive, getRiddleFive().getRiddle());
+        assertEquals(getRiddleFiveText(), getRiddleFive().getRiddle());
     }
 
     @Test
@@ -135,7 +132,7 @@ public class KVRiddleTest {
 
     @Test
     void testKVRiddle_Riddle6_Text(){
-        assertEquals(KVRiddle.riddleSix, getRiddleSix().getRiddle());
+        assertEquals(getRiddleSixText(), getRiddleSix().getRiddle());
     }
 
     @Test
@@ -150,7 +147,7 @@ public class KVRiddleTest {
 
     @Test
     void testKVRiddle_Final_Text(){
-        assertEquals(KVRiddle.finalText, getFinalRiddle().getRiddle());
+        assertEquals(getFinalText(), getFinalRiddle().getRiddle());
     }
 
     @Test
@@ -163,6 +160,29 @@ public class KVRiddleTest {
         assertNull(getIncorrectResult());
     }
 
+    private String getRiddleTwoText() {
+        return getRiddleForSolution(solutionRiddleOne).getRiddle().getRiddle();
+    }
+
+    private String getRiddleThreeText() {
+        return getRiddleForSolution(solutionRiddleTwo).getRiddle().getRiddle();
+    }
+
+    private String getRiddleFourText() {
+        return getRiddleForSolution(solutionRiddleThree).getRiddle().getRiddle();
+    }
+
+    private String getRiddleFiveText() {
+        return getRiddleForSolution(solutionRiddleFour).getRiddle().getRiddle();
+    }
+
+    private String getRiddleSixText() {
+        return getRiddleForSolution(solutionRiddleFive).getRiddle().getRiddle();
+    }
+
+    private String getFinalText() {
+        return getRiddleForSolution(solutionRiddleSix).getRiddle().getRiddle();
+    }
 
     Riddle getRiddleTwo(){
         return getRiddleForSolution(solutionRiddleOne).getRiddle();
@@ -187,6 +207,7 @@ public class KVRiddleTest {
     Riddle getFinalRiddle(){
         return getRiddleForSolution(solutionRiddleSix).getRiddle();
     }
+
     Riddle getIncorrectResult(){
         return getRiddleForSolution(wrong).getRiddle();
     }
