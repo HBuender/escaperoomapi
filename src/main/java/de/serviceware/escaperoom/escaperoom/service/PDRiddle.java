@@ -56,6 +56,8 @@ public class PDRiddle extends RiddleServiceBase{
         return new StaticTextContent(escapeRoomTitle,escapeRoomDescription,hintTitle,hintDescription,areYouReadyTitle,areYouReadyDescription);
     }
 
+
+
     @Override
     public SolutionProposalResult validateSolutionProposal(SolutionProposal proposal) {
         if("9886".equals(proposal.getProposal())){
@@ -78,5 +80,7 @@ public class PDRiddle extends RiddleServiceBase{
             return getCorrectResult(solUnderstood+riddleFour,"Riddle 5",null);
         }
         return getIncorrectResult();
+
     }
+
 }
