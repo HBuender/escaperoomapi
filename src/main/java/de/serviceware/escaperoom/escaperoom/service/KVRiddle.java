@@ -52,12 +52,12 @@ public class KVRiddle extends RiddleServiceBase {
     private static final String READY_DESCRIPTION = "Habt ihr die Hinweise verteilt und die Aufgaben verstanden?";
 
     // Solution constants
-    public static final String SOLUTION_1 = "2017";
-    public static final String SOLUTION_2 = "13301725";
-    public static final String SOLUTION_3 = "1224";
-    public static final String SOLUTION_4 = "210,5";
-    public static final String SOLUTION_5 = "131221";
-    public static final String SOLUTION_6 = "1986";
+    private static final String SOLUTION_1 = "2017";
+    private static final String SOLUTION_2 = "13301725";
+    private static final String SOLUTION_3 = "1224";
+    private static final String SOLUTION_4 = "210,5";
+    private static final String SOLUTION_5 = "131221";
+    private static final String SOLUTION_6 = "1986";
 
     private final Map<String, RiddleInfo> solutionMap;
 
